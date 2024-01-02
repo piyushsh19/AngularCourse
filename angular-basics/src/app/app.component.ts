@@ -2,7 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <div class="app">Hello Angular!</div> `,
+  template: `
+    <div class="app">
+      <h1 (click)="handleClick($event)">{{ newMessage }}</h1>
+      <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
+      <p>{{ messageInput.value }}</p>
+    </div>
+  `,
   styles: [
     `
       .app {
@@ -15,7 +21,14 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class AppComponent implements OnInit {
+  message!: string;
+  newMessage!: string;
+
   ngOnInit() {
-    console.log('Hello World!');
+    this.message = 'Hello World';
+  }
+
+  handleClick(event: Event) {
+    console.log(event);
   }
 }
