@@ -4,11 +4,18 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="app">
-      <h1 (click)="handleClick($event)">{{ newMessage }}</h1>
-      <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
-      <p>{{ messageInput.value }}</p>
+  <app-donut-list></app-donut-list>
     </div>
   `,
+  /*  template: `
+  <div class="app">
+  <h1 (click)="handleClick($event)">{{ newMessage }}</h1>
+  <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
+  <p>{{ messageInput.value }}</p>
+</div>
+`*/
+  //#messageInput is Template refrance variable that alow us to grab hold of a components or an element and acces information about it
+
   styles: [
     `
       .app {
@@ -30,5 +37,11 @@ export class AppComponent implements OnInit {
 
   handleClick(event: Event) {
     console.log(event);
+  }
+  handleInput(event:Event){
+    const { value} =event.target as HTMLInputElement;   // type casting 
+    console.log(value)
+    // make a pracise to not mutate the value , 
+
   }
 }
