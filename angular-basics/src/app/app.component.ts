@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="app">
-  <app-donut-list></app-donut-list>
+  <donut-list></donut-list>
     </div>
   `,
   /*  template: `
