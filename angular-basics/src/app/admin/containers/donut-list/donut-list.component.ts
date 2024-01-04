@@ -1,21 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Donut } from '../../models/donut.model';
 
 @Component({
   selector: 'donut-list',
   template: `
     <div>
+      <!-- <donut-card></donut-card> -->
       <div>
-        {{ donut.name }}
-        {{ donut.price }}
+        <!-- {{ donut.name }}
+        {{ donut.price}} -->
         <!-- {{donut  |json}} -->
-      </div>
+        <!-- <div class="donut-card">
+          <img src="/assets/img/{{donut.icon}}.svg" [alt]="donut.name" class ="donut-card-icon">
+          
+        </div>                                   /// dump componets
+        <p>{{donut.name}}</p>
+        <p>{{donut.price}}</p>
+      </div> -->
     </div>
   `,
   styles: [],
 })
 export class DonutListComponent implements OnInit {
-  donut!: any;
-  donuts!: any[];
+  donut!: Donut
+  donuts!: Donut[];
 
   constructor() {}
 
