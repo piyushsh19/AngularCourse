@@ -4,25 +4,31 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="app">
-  <donut-list></donut-list>
+      <header class="header">
+        <img src="/assets/img/logo.svg" alt="Ultimate Donuts" class="logo" />
+      </header>
+      <donut-list></donut-list>
     </div>
   `,
-  /*  template: `
-  <div class="app">
-  <h1 (click)="handleClick($event)">{{ newMessage }}</h1>
-  <input [value]="message" (input)="newMessage = messageInput.value" #messageInput>
-  <p>{{ messageInput.value }}</p>
-</div>
-`*/
-  //#messageInput is Template refrance variable that alow us to grab hold of a components or an element and acces information about it
-
   styles: [
     `
       .app {
-        margin-top: 50px;
-        font-size: 22px;
-        color: #fff;
-        text-align: center;
+        background: #fff;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 94%;
+        margin: 25px auto;
+        padding: 25px;
+        border: 4px solid #ef9fc7;
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+      }
+      .logo {
+        width: 100px;
+        height: 80px;
       }
     `,
   ],
@@ -38,10 +44,10 @@ export class AppComponent implements OnInit {
   handleClick(event: Event) {
     console.log(event);
   }
-  handleInput(event:Event){
-    const { value} =event.target as HTMLInputElement;   // type casting 
-    console.log(value)
-    // make a pracise to not mutate the value , 
-
-  }
 }
+/*
+ <app-root > inject CONETENT OF  the components in the DOM. Agular give the ng hosts and ng content
+ _ngcontent  value get changed every time deliberately for cache bursting reason whenever we recompile and uploads the new version of the application. these can binds to the decalaration so that we can habve a same clasa name in different components .
+ it inject in the style not in css class. 
+
+ */
