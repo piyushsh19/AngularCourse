@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Donut } from '../../models/donut.model';
 
 @Component({
   selector: 'donut-card',
+  //encapsulation : ViewEncapsulation.ShadowDom,  // to use shadow DOM, IT HAS A VALUE WHICH ENUM USE, SHADOW DOM USES NATIVE API
   template: `
  
       <img
