@@ -7,10 +7,10 @@ import { Donut } from '../../models/donut.model';
   template: `
   <div
     class="donut-card"
-    [ngStyle]="{
-      border :donut.promo ? '2px solid red' : 'none',
-      'background-color': donut.promo ? 'pink' : 'none'
-    }"
+    [ngClass]= "{
+    'donut-card-promo' : donut.promo, 
+    'donut-card-new' : true
+}"
   >
     <img
       src="/assets/img/{{ donut.icon }}.svg"
