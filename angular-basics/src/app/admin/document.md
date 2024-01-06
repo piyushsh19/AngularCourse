@@ -32,6 +32,35 @@ If we assign in div *ngIf = "donut.length" it willreturn empty array as right.
 ng-container is a virtual elemnt because its does gets renederer. Ng its print in the dom for debugging purpose l;ike 
 <!-ng- container > <binding>:3>
 
+ngif else and then Statements:-
 
+in else we specifies an another template like <ng-template> </ng-template>. we creayte a refereance template variable #nothing. we can use else when we wait for any callback wait from server.
+
+<ng-container
+      *ngIf="donuts.length; then cards; else nothing"
+    ></ng-container>
+
+    <ng-template #cards>
+      <donut-card [donut]="donuts[0]"></donut-card>
+      <donut-card [donut]="donuts[1]"></donut-card>
+      <donut-card [donut]="donuts[2]"></donut-card>
+    </ng-template>
+    <ng-template #nothing>
+      <p>No Donuts here...</p>
+    </ng-template>
+
+NgIf Syntax with <ng-template>
+
+The astrik does a property binding as well as createing a template. We are going to use the ngif in the template because we dont want the refernce . astrick is a shorthand sugar syntax for  creating templatereference. The we only need this code ;-
+   <ng-template [ngIf] ="donuts.length" [ngIfElsse]="nothing>
+      <donut-card [donut]="donuts[0]"></donut-card>
+      <donut-card [donut]="donuts[1]"></donut-card>
+      <donut-card [donut]="donuts[2]"></donut-card>
+    </ng-template>
+    <ng-template #nothing>
+      <p>No Donuts here...</p>
+    </ng-template>
+
+    ngconatiner is used for grouping elemnts and ng template is used for furtutre use
 
 
