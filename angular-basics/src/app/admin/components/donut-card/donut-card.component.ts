@@ -8,7 +8,7 @@ import { Donut } from '../../models/donut.model';
   <div
     class="donut-card"
     [ngClass]= "{
-    'donut-card-promo' : donut.promo, 
+    'donut-card-promo' : donut.promo  , 
     'donut-card-new' : true
 }"
   >
@@ -25,7 +25,7 @@ import { Donut } from '../../models/donut.model';
         {{ donut.name }}
       </p>
       <p class="donut-card-price">
-        {{ donut.price }}
+        {{ donut.price | currency : 'INR' }}
       </p>
     </div>
   </div>
@@ -43,6 +43,9 @@ styles: [
       transition: transform 0.2s ease-in-out;
       &:hover {
         transform: translateY(-3px);
+      }
+      &-promo{
+        border : 2px solid green;
       }
       &-name {
         font-size: 16px;

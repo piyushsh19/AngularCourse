@@ -19,3 +19,4 @@ NgClass- It help in maintaining the style acrros the the aap when it scales.
     // thesee two are seperate classes
 }"
 
+Pipes is like a pure function which sits betwwen your dataand when its displayed in Dom .its has arguments whiuch are seperated by colon like currency(). A p[ure function can take and invoke functions]
