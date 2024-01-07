@@ -7,14 +7,11 @@ import { Donut } from '../../models/donut.model';
   template: `
   <div>
     <ng-container
-      *ngIf="donuts.length; then cards; else nothing"
-    ></ng-container>
+      *ngIf="donuts.length; else nothing">
 
-    <ng-template #cards>
-      <donut-card [donut]="donuts[0]"></donut-card>
-      <donut-card [donut]="donuts[1]"></donut-card>
-      <donut-card [donut]="donuts[2]"></donut-card>
-    </ng-template>
+      <donut-card *ngFor = "let donut of donuts" [donut]="donut"></donut-card>
+
+      ></ng-container>
     <ng-template #nothing>
       <p>No Donuts here...</p>
     </ng-template>

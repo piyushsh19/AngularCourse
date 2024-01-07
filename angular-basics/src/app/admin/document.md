@@ -62,5 +62,10 @@ The astrik does a property binding as well as createing a template. We are going
     </ng-template>
 
     ngconatiner is used for grouping elemnts and ng template is used for furtutre use
+    .................................................................
+
+    NfFor directive:-
+    It is also bhevaioural and template based dat to loop data in componets. *ngFor = "let donut of donuts". Are donuts is a iterable collection. I t iterates orver an componets as well as on elemnt as well.
+
 
 
