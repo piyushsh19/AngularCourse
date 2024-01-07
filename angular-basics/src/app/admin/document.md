@@ -66,6 +66,8 @@ The astrik does a property binding as well as createing a template. We are going
 
     NfFor directive:-
     It is also bhevaioural and template based dat to loop data in componets. *ngFor = "let donut of donuts". Are donuts is a iterable collection. I t iterates orver an componets as well as on elemnt as well.
+    Performance optimaziation for ngfor  when rerendering. Angular use internal differ. It basically comparing by identity {} == {} is false. As its a immutable form and dat is one directional.We can do its by trackById. If we are to delete any particaulr dtataset then angular know by its add and enhancing performance by diff.
+    It uses object identity as we can use mutatitaion of object .It compare the lastest rendered id very quickly
 
 
 

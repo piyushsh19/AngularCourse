@@ -9,9 +9,9 @@ import { Donut } from '../../models/donut.model';
     <ng-container
       *ngIf="donuts.length; else nothing">
 
-      <donut-card *ngFor = "let donut of donuts" [donut]="donut"></donut-card>
+      <donut-card *ngFor = "let donut of donuts; trackBy :trackById" [donut]="donut" ></donut-card>
 
-      ></ng-container>
+      </ng-container>
     <ng-template #nothing>
       <p>No Donuts here...</p>
     </ng-template>
@@ -49,5 +49,9 @@ export class DonutListComponent implements OnInit {
         description: 'Chocolate drizzled with caramel.',
       },
     ];
+  }
+  trackById(index: number, value: Donut){
+    console.log(index, value)
+    return value.id
   }
 }
