@@ -91,5 +91,29 @@ It will give an error variable does not exist To soleve its we have format  (let
     {{i}} // o,1,2
     </donut-card>
     </ng-template>
-As our ng template is creating the variable so we can use anywhere in the template
+As our ng template is creating the variable so we can use anywhere in the template.
+............................................................................
+
+NgSwitch Directive-
+we can use tyscript bheviour in model by making promo as opitonal variable and giving two different values using pipe. promo? : "new" | "limited".For new items we going to use ng container as its a virtual element where we ddefine ngswitch. In container we define the switchcase which revieve string.
+  <ng-container [ngSwitch]="donut.promo"] >
+        <span *ngSwitchCase="'new'" class="donut-card-label"> new</span>
+
+        </ng-container>
+
+ It alow us to conditionally supply the lement based on case its render. and we can conditionally apply to the span elemet like - 
+         <span *ngSwitchCase="'new'" class="donut-card-label" style ="color: red"> new</span>
+ we also hhave ngSwitchDFefault used in example    .
+
+ We can use ngcontainer and then using ng tempaltewhich doesnot get render then using property binding.which then treates the  content of the ng -templatet which is actuall html  which is bound and render via angular .
+
+    <ng-container [ngSwitch]="donut.promo" >
+     
+        <span class="donut-card-label">
+        <ng-template [ngSwitchCase]="'new'">New</ng-template>
+        <ng-template [ngSwitchCase]="'limited'">Limited</ng-template>
+        <ng-template ngSwitchDefault>Nothing special</ng-template>
+
+        </span>
+        </ng-container>
 
