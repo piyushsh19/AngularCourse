@@ -69,5 +69,27 @@ The astrik does a property binding as well as createing a template. We are going
     Performance optimaziation for ngfor  when rerendering. Angular use internal differ. It basically comparing by identity {} == {} is false. As its a immutable form and dat is one directional.We can do its by trackById. If we are to delete any particaulr dtataset then angular know by its add and enhancing performance by diff.
     It uses object identity as we can use mutatitaion of object .It compare the lastest rendered id very quickly
 
+    .........................................................................
+  NgFor
+    Every iteration in loop is taken over index. This way we can access index -<div *ngFor = "let donut of donuts; index as i". we can bind this on the basis of class of odd and even. eg-  [style.color] = " 0 ? ""red: "blue".
+    We can as extend NgFor in template form if we have more control over bhevaiour of div.
+    Advanced Ngfor -
+    Its is called an template approach. As its a template its should container the elemnt donut card inside eg -
+    <ng-template >
+    <donut-card [donut] = "donut">
+    </donut-card>
+    </ng-template>
 
+The asterik in *ngFor is exactaly the template shown above. aND WE ALSO NEED TO SPECIFY THE OF LIKE which accept a propert donut -
+ <ng-template ngFor [ngForOf] ="donuts">
+    <donut-card [donut] = "donut">
+    </donut-card>
+    </ng-template>
+It will give an error variable does not exist To soleve its we have format  (let-donut).
+ <ng-template ngFor [ngForOf] ="donuts" let-donut let-i= "index">
+    <donut-card [donut] = "donut">
+    {{i}} // o,1,2
+    </donut-card>
+    </ng-template>
+As our ng template is creating the variable so we can use anywhere in the template
 
