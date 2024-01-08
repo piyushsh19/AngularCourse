@@ -23,6 +23,17 @@ import { Donut } from '../../models/donut.model';
     -->
       <p class="donut-card-name">
         {{ donut.name }}
+        <ng-container [ngSwitch]="donut.promo" >
+        <!-- <span *ngSwitchCase="'new'" class="donut-card-label"> new</span>
+        <span *ngSwitchCase="'limited'" class="donut-card-label"> limited</span>
+        <span *ngSwitchDefault class="donut-card-label"> Nothing special</span> -->
+        <span class="donut-card-label">
+        <ng-template [ngSwitchCase]="'new'">New</ng-template>
+        <ng-template [ngSwitchCase]="'limited'">Limited</ng-template>
+        <ng-template ngSwitchDefault>Nothing special</ng-template>
+
+        </span>
+        </ng-container>
       </p>
       <p class="donut-card-price">
         {{ donut.price | currency : 'INR' }}
@@ -57,6 +68,15 @@ styles: [
       &-icon {
         width: 50px;
         margin-right: 10px;
+      }
+      &-label{
+        border: 1px solid #c14583;
+        border-radius: 4px;
+        padding : 0 4px;
+        margin-left : 5px;
+        font-size:12px;
+        color: #c14583
+;
       }
     }
   `,
