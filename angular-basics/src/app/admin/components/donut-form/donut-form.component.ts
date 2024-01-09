@@ -4,36 +4,70 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'donut-form',
   template: `
-    <form class="donut-form" #form="ngForm">
+  <form class="donut-form" #form="ngForm">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" class="input" required ngModel #name="ngModel" />
+      {{name.valid}}
+{{name.invalid}}
+{{name.touched}} 
+{{name.untouched}}
+{{name.pristine}}
+{{name.dirty}}
+    </label>
+    
+
+    <label>
+      <span>Icon</span>
+      <select name="icon" class="input input--select" required ngModel>
+        <option *ngFor="let icon of icons" [ngValue]="icon">
+          {{ icon }}
+        </option>
+      </select>
+    </label>
+
+    <label>
+      <span>Price</span>
+      <input type="number" name="price" class="input" required ngModel />
+    </label>
+
+    <div class="donut-form-radios">
+      <p class="donut-form-radios-label">Promo:</p>
       <label>
-        <span>Name</span>
-        <input type="text" name="name" class="input" ngModel />
+        <input
+          type="radio"
+          name="promo"
+          required
+          [value]="undefined"
+          ngModel
+        />
+        <span>None</span>
       </label>
-
       <label>
-        <span>Price</span>
-        <input type="number" name="price" class="input" ngModel />
+        <input type="radio" name="promo" required value="new" ngModel />
+        <span>New</span>
       </label>
+      <label>
+        <input type="radio" name="promo" required value="limited" ngModel />
+        <span>Limited</span>
+      </label>
+    </div>
 
-      <div class="donut-form-radios">
-        <p class="donut-form-radios-label">Promo:</p>
-        <label>
-          <input type="radio" name="promo" [value]="undefined" ngModel />
-          <span>None</span>
-        </label>
-        <label>
-          <input type="radio" name="promo" value="new" ngModel />
-          <span>New</span>
-        </label>
-        <label>
-          <input type="radio" name="promo" value="limited" ngModel />
-          <span>Limited</span>
-        </label>
-      </div>
+    <label>
+      <span>Description</span>
+      <textarea
+        name="description"
+        class="input input--textarea"
+        required
+        ngModel
+      ></textarea>
+    </label>
 
+    <!-- <pre>{{ form.form.status | json }}</pre> -->
       <pre>{{ form.value | json }}</pre>
-    </form>
-  `,
+
+  </form>
+`,
   styles: [
     `
       .donut-form {
@@ -57,6 +91,17 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class DonutFormComponent implements OnInit {
+  
+  icons: string[] = [
+    'caramel-swirl',
+    'glazed-fudge',
+    'just-chocolate',
+    'sour-supreme',
+    'strawberry-glaze',
+    'vanilla-sundae',
+    'zesty-lemon',
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
