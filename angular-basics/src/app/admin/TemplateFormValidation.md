@@ -66,4 +66,4 @@ Its return the object from Ng model it has several property behind it like.
 {{name.dirty}} // value is typed.
 
 // Errors for low level control on validations.I f we need to test -{{name.errors | json}}
-Saftey check in angular (?) eg - name.error?.name
+Saftey check in angular (?) eg - name.errors?.name
