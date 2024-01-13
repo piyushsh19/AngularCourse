@@ -67,3 +67,8 @@ Its return the object from Ng model it has several property behind it like.
 
 // Errors for low level control on validations.I f we need to test -{{name.errors | json}}
 Saftey check in angular (?) eg - name.errors?.name
+
+NgSubmit model .
+Enables binding AngularJS expressions to onsubmit events.
+
+Additionally it prevents the default action (which for form means sending the request to the server and reloading the current page), but only if the form does not contain action, data-action, or x-action attributes.
