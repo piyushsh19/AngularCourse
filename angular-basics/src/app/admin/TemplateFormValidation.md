@@ -72,3 +72,46 @@ NgSubmit model .
 Enables binding AngularJS expressions to onsubmit events.
 
 Additionally it prevents the default action (which for form means sending the request to the server and reloading the current page), but only if the form does not contain action, data-action, or x-action attributes.
+
+hANDLE sUBMIT(form: ngForm){
+ console.log(form.value)
+}
+
+AbstractControl Directive we get the value.
+Disabling submit button for saftey button. [disabled]="form.valid".
+
+hANDLE sUBMIT(form: ngForm){
+if(form.valid){
+  console.log(form.value)
+}
+} this prvenet any one to enable submit events from dom or console.
+
+Trigger Validation message on submit: -
+#price or #icon
+hANDLE sUBMIT(form: ngForm){
+if(form.valid){
+  console.log(form.value)
+}else{
+  form.form.markAllasTouched()
+}
+}
+.............................................................................
+
+Rightnow or form is dynmaically updated our model..
+We can do by delaying the object by -  [ngModelOptions]='{ updateOn: blur'}'.
+
+Form Reset:-
+in button we have rsset button events click , (click)="form.restForm()".
+we can check by ({form.submitted}). 
+user Feedback 
+<div clas="form-working" *ngif= "form.valid && form.Submitted">
+Working
+</div>
+.To get get from form we need Output and events emmiter.
+@output() create = new EventEmmiter<Donu>();
+In samrt componnets we pass <donut-form (create)= "oncreate($event)">
+Oneway databinding for form:
+
+We bind soem data in form on ngOnInit(), By Input , @Input()donut!:Donut.
+In samrt componnets we pass <donut-form [donu]="donut" (create)= "oncreate($event)">
+We can do by[ngModel]="donut.icon".Ifwe use two way binding then it changes our initial value.
