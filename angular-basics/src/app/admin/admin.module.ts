@@ -9,6 +9,8 @@ import { DonutSingleComponent } from './containers/donut-single/donut-single.com
 //componets
 import { DonutCardComponent } from './components/donut-card/donut-card.component';
 import { DonutFormComponent } from './components/donut-form/donut-form.component';
+//Services
+import { DonutService } from './services/donut.service';
 
 
 
@@ -24,6 +26,7 @@ import { DonutFormComponent } from './components/donut-form/donut-form.component
     CommonModule,
     FormsModule
   ],
+  providers: [DonutService],
   exports:[DonutListComponent,DonutSingleComponent] /// this export is requires if we want to use a differently created componets 
   
 })

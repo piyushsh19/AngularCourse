@@ -1,7 +1,7 @@
 export interface Donut {
     // interface is like a blue print how our datatype lokks like
     //npx ng g interface admin/models/Donut model -- cmd to create a model
-    id: string;
+    id?: string; // msometimes new product dont have the id
     name: string;
     icon: string;
     price: number;
