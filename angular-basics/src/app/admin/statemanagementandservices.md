@@ -41,3 +41,6 @@ Class method as a state slector to encapsulate it. If we have a dataset of priva
     create(payload:Donut){
     this.donut = [...this.donuts,payload];
   }
+  
+  Edit in form Functionality: 
+  We need to handle logic inline for update \and on submit.We need to supply the id whatever item is updatedwe need a event emmiter
