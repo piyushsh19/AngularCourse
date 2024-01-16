@@ -11,7 +11,11 @@ import { DonutService } from '../../services/donut.service';
     <ng-container
       *ngIf="donuts.length; else nothing">
 
-      <donut-card *ngFor = "let donut of donuts; trackBy :trackById" [donut]="donut" ></donut-card>
+      <donut-card
+          *ngFor="let donut of donuts; trackBy: trackById; index as i"
+          [donut]="donut"
+        >
+        </donut-card>
       <!-- <div
       [style.color]="o ? 'red': 'green'"
       *ngFor = "let donut of donuts; 
@@ -40,7 +44,9 @@ export class DonutListComponent implements OnInit {
   constructor(private donutService: DonutService) {}
 
   ngOnInit(): void {
-    this.donuts = this.donutService.donuts;
+    // this.donuts = this.donutService.donuts; 
+    this.donuts = this.donutService.read();
+
   }
 
   trackById(index: number, value: Donut) {

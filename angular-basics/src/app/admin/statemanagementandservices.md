@@ -7,3 +7,37 @@ providers: [DonutService].
 In servies we can have a  hold states, http request , guards , route defination.
 
 Dependency Injection to pass state from service to components by constructor and NgOninitfunction. Use constor for wriring up the thing and state ,and ngonit for initializing and datafetching. It can be achevied by type script .eg- constructor(private donutservice:Donutservice)
+State Selector :-
+ this.donut = this.donutService.donuts.find(
+      (donut: Donut) => donut.id === id
+    ) || { name: '', icon: '', price: 0, description: '' };
+
+Class method as a state slector to encapsulate it. If we have a dataset of private then other componets does not read our data , class method read is used to pass it.
+
+    this.donut = this.donutService.readOne('8amkZ9');
+    Then we seperate the logic in a proper way like:-
+      read() {
+    return this.donuts;
+  }
+
+  readOne(id: string) {
+    const donut = this.read().find((donut: Donut) => donut.id === id);
+
+    if (donut) {
+      return donut;
+    }
+
+    return { name: '', icon: '', price: 0, description: '' };
+  }
+
+  Immutability:
+  In form component we need to pass the object to the parent componet and then inside the service we add the form to the existing dataset state.We basically store the new object in the meory whenever the component is initialized.
+  wee need to craete a create function in service like
+  create(payload:Donut){
+    this.donut.PUSH()
+  }
+  This can be achieved by mmutable patterns like PUSH.wE CAN PUSH NEW ITEM IN THE NEW ARRAY BUT ITS mUTATING THE VALUES. We want to take the existing objects and passs the new payload .It s create entirely anew object (its uses identity check if these two objects are the same)
+
+    create(payload:Donut){
+    this.donut = [...this.donuts,payload];
+  }
