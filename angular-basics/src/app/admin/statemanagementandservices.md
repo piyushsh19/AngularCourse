@@ -43,4 +43,18 @@ Class method as a state slector to encapsulate it. If we have a dataset of priva
   }
   
   Edit in form Functionality: 
-  We need to handle logic inline for update \and on submit.We need to supply the id whatever item is updatedwe need a event emmiter
+  We need to handle logic inline for update \and on submit.We need to supply the id whatever item is updatedwe need a event emmiter.
+  We use map to get the id changes over the objects.iSt gives idivisual donut 
+    this.donuts = this.donuts.map((donut: Donut) => {
+      if (donut.id === payload.id) {
+        return payload;
+      }
+      return donut;
+    });
+    console.log(this.donuts);
+  }
+
+  Deleting State:- 
+  we pass donut to check it by filter which givre individual id.
+  It iterates trough the array and return the id.
+  We create a button in form. We need the  ouput and eventEmmitter.We can also give confirm by giving the name.Then we listing the delete function.Whaterver we dlete we can see in the console , rightnow its doing it locally.
