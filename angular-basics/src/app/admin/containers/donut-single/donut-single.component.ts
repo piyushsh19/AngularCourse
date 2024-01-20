@@ -22,7 +22,9 @@ export class DonutSingleComponent implements OnInit {
   constructor(private donutService: DonutService) {}
 
   ngOnInit(): void {
-    // this.donut = this.donutService.readOne('8amkZ9');
+    this.donutService
+      .readOne('3u98Kl')
+      .subscribe((donut: Donut) => (this.donut = donut));
   }
 
   onCreate(donut: Donut) {
