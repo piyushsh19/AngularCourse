@@ -17,3 +17,9 @@ It run trough packag.json we have script and db. run DB or npm run .Its watch an
  this.donutservice.read().As our service return an  return a observable so wee need to subsribe it.
  Data from promise is observable which subsribe whenever its ready.
 
+ PUT :
+ Constructs an observable that, when subscribed, causes the configured PUT request to execute on the server. The PUT method replaces an existing resource with a new set of values. See the individual overloads for details on the return type.
+
+ Delete;
+ Constructs an observable that, when subscribed, causes the configured DELETE request to execute on the server. See the individual overloads for details on the return type.
+
