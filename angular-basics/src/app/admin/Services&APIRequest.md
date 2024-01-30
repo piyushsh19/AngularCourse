@@ -42,6 +42,16 @@ OperatorFunction<T, T | ObservedValueOf<O>>: A function that returns an Observab
 Description
 It only listens to the error channel and ignores notifications. Handles errors from the source observable, and maps them to a new observable. The error may also be rethrown, or a new error can be thrown to emit an error from the result.
 
+Retry Any Request If failed :-
+
+if you want to retry to connect. It enables us to specify how many time to retry.
+retry(2)// in network tab we have 3calls.
+
+retryWhen() if we want to delay the retry then use it.
+retryWhen((errors)=>{
+    return errors.pipe(delay(1000),take(2)); // waits for 1 sec then fire the request.With take opertor we can give how many times
+})
+
  
 
 
