@@ -52,6 +52,21 @@ retryWhen((errors)=>{
     return errors.pipe(delay(1000),take(2)); // waits for 1 sec then fire the request.With take opertor we can give how many times
 })
 
+HttpHeader and reuestOption:-
+Represents the header configuration options for an HTTP request. Instances are immutable. Modifying methods return a cloned instance with the change. The original object is never changed.
+
+class HttpHeaders {
+  constructor(headers?: string | { [name: string]: string | number | (string | number)[]; } | Headers)
+  has(name: string): boolean
+  get(name: string): string | null
+  keys(): string[]
+  getAll(name: string): string[] | null
+  append(name: string, value: string | string[]): HttpHeaders
+  set(name: string, value: string | string[]): HttpHeaders
+  delete(name: string, value?: string | string[]): HttpHeaders
+}
+
+
  
 
 
