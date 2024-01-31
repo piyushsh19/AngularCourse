@@ -29,3 +29,17 @@ Redirecting in case of empty path:
     ],
   },
 the above routing defintion is live in our admin module then its confuses the base path.The feature module should have path match in the child nested components.It work in order from top to bottom.
+
+Wild cards: IN case of misspelled url or old route.then it give uncaught error.It help in redirect or display any component.
+We specify by astricks
+{
+
+path:"**",
+redirectTo: "admin"
+}
+
+Lazy Loading;
+LoadChildren is a typescript function which return a promise which import the feature module.We remove admin module split code bundling by lazy load (source .admin).
+
+ loadChildren: () =>
+      import('./admin/admin.module').then((x) => x.AdminModule),
