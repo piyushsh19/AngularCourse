@@ -43,3 +43,7 @@ LoadChildren is a typescript function which return a promise which import the fe
 
  loadChildren: () =>
       import('./admin/admin.module').then((x) => x.AdminModule),
+
+ Declarative Router:
+ If we are on our admin route then we add create a new donut item then we use routerlink is a attribute which link to the property of new. /admin/new.
+ we need to provide a new router defination with relative path /donuts/new .If we don't create a new item then it assign a new id.In card component we bind it     
