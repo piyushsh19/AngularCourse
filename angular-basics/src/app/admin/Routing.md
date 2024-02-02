@@ -54,4 +54,7 @@ The id with colon create dymanic partion act as a place holder .It read the .cpr
 
 Pass Custom Data to route:
 We have a data property on route, we bind it to dynamic route.Then bind in the component and get oit from router state.
-Indexlooker in type script - ['isEdit']
+Indexlooker in type script - ['isEdit'].
+
+Router Navigation:
+Navigate api can pass any arrayof commands or route (['admin'])
