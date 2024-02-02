@@ -50,4 +50,8 @@ LoadChildren is a typescript function which return a promise which import the fe
 
 Dynamic routeParams and ActiveRoute:   
 Route : donuts/new/:id
-The id with colon create dymanic partion act as a place holder .It read the .cproperty from id.Activated route as it allow us to capture an observerable.It has sbapshot property. pramp map is use to allow us to specufy where parameter we want by get api.
+The id with colon create dymanic partion act as a place holder .It read the .cproperty from id.Activated route as it allow us to capture an observerable.It has sbapshot property. pramp map is use to allow us to specufy where parameter we want by get api..
+
+Pass Custom Data to route:
+We have a data property on route, we bind it to dynamic route.Then bind in the component and get oit from router state.
+Indexlooker in type script - ['isEdit']
