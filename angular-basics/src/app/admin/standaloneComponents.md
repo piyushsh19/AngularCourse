@@ -22,3 +22,14 @@ To just import the provideras for router is ImportProviderForm only use in appli
 
 To use routing we need to import  property , which specify the standalone template dependancy -those components,pipe etc.
 
+In admin module we dont have any provider dependecy , we can achieve it by SCOPEPROVIDER. we didi it on root level
+      providers: [importProvidersFrom(HttpClientModule)].
+
+Just add this two line in components it only import required directive
+  standalone:true,
+  imports:[RouterModule,CommonModule],
+
+  rECENTLY these are made stanbdalone -NgClass,NgSwitch,NgSwitchCase,CurrencyPipe
+
+
+
