@@ -20,4 +20,5 @@ we need this to provide defination and app config for bootstrap. then make app.m
 To just import the provideras for router is ImportProviderForm only use in application injector like router.
   providers:[importProvidersFrom(RouterModule.forRoot(AppRoutes))]
 
+To use routing we need to import  property , which specify the standalone template dependancy -those components,pipe etc.
 

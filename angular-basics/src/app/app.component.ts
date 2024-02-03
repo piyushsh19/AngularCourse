@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports:[RouterModule],
   template: `
     <div class="app">
       <header class="header">
@@ -11,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
       <!-- <donut-list></donut-list> -->
       <!-- <donut-single></donut-single> -->
       <!-- <router-outlet></router-outlet>  //remove to see standalone components-->
-
+      <router-outlet></router-outlet>
     </div>
   `,
   styles: [
