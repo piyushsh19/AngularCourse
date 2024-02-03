@@ -29,7 +29,17 @@ Just add this two line in components it only import required directive
   standalone:true,
   imports:[RouterModule,CommonModule],
 
-  rECENTLY these are made stanbdalone -NgClass,NgSwitch,NgSwitchCase,CurrencyPipe
+  rECENTLY these are made stanbdalone -NgClass,NgSwitch,NgSwitchCase,CurrencyPipe.
 
+  Code splitting and lazy loading at component level.
 
+  Wec an check by lazy chunk files
+Load component is a property or a function which dymically import a componnet. By this it return lazy lpoaded component at root level.
+
+ProvideIn  can be removed in stand alone as our component is already load in root componnet because of lazy loading and scopeded provider.
+<!-- @Injectable({
+  providedIn: 'root',
+}) -->
+
+If we dont specify of root we can also provide it on componet below srtand alone : true.
 

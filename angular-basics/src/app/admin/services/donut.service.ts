@@ -18,9 +18,7 @@ import {
 
 import { Donut } from '../models/donut.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+
 export class DonutService {
   private donuts: Donut[] = [];
 
