@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   template: `
     <div class="app">
       <header class="header">
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
       </header>
       <!-- <donut-list></donut-list> -->
       <!-- <donut-single></donut-single> -->
-      <router-outlet></router-outlet>
+      <!-- <router-outlet></router-outlet>  //remove to see standalone components-->
 
     </div>
   `,
